@@ -57,7 +57,7 @@ class WLAN(Screen):
     wlanssid = StringProperty(None)
     wlanpsk = StringProperty(None)
     android_qrcode = ObjectProperty(None)
-    ios_qrcode = ObjectProperty(None)
+##    ios_qrcode = ObjectProperty(None)
     windows_qrcode = ObjectProperty(None)
 
     def updatesettings(self):
@@ -66,7 +66,7 @@ class WLAN(Screen):
         self.wlanssid = wlancfg.get('WLAN', 'wlanssid')
         self.wlanpsk = wlancfg.get('WLAN', 'wlanpsk')
         self.android_qrcode.reload()
-        self.ios_qrcode.reload()
+##        self.ios_qrcode.reload()
         self.windows_qrcode.reload()
 
 class ScreenManagement(ScreenManager):
