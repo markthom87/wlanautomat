@@ -1,0 +1,27 @@
+#!/bin/bash
+WLANPSK=$(dd if=/dev/urandom count=1 status=none|tr -d -c 'a-z'|cut -b1-10)
+#DEBUG
+#echo "$WLANPSK"
+sed -ie "s/wpa_passphrase=.*/wpa_passphrase=${WLANPSK}/" /etc/hostapd/hostapd.conf
+service hostapd reload
+
+rm /var/guestwlan/*.jpg
+# Only for use QR-Codes for slideshow
+# Uncommit for use
+#rm /var/guestwlan/images/*.jpg
+qrencode -t PNG -o /var/guestwlan/android.png -s 4 "WIFI:T:WPA;S:Guest-WLAN;P:${WLANPSK};H:false;"
+qrencode -t PNG -o /var/guestwlan/windows.png -s 4 "WIFI;T:WPA;S:Guest-WLAN;P:${WLANPSK};H:false;"
+sed -e "s/<string>wlanpsk/<string>${WLANPSK}/" /var/www/html/gaestewlan.mobileconfig.in > /var/www/html/${WLANPSK}.mobileconfig
+qrencode -t PNG -o /var/guestwlan/ios.png -s 4 "http://my.example.com/${WLANPSK}.mobileconfig"
+cd /var/guestwlan/
+mogrify -format jpg *.png
+# Only for use QR-Codes for slideshow
+# Uncommit for use
+#cp *.jpg /var/guestwlan/images/
+rm /var/guestwlan/*.png
+
+cat > /var/guestwlan/wlan.cfg <<EOF
+[WLAN]
+wlanssid=Guest-WLAN
+wlanpsk=${WLANPSK}
+EOF

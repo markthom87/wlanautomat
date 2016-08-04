@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>PayloadContent</key>
+<array>
+<dict>
+<key>EncryptionType</key>
+<string>Any</string>
+<key>HIDDEN_NETWORK</key>
+<false/>
+<key>Password</key>
+<string>wlanpsk</string>
+<key>PayloadIdentifier</key>
+<string>Text</string>
+<key>PayloadType</key>
+<string>com.apple.wifi.managed</string>
+<key>PayloadUUID</key>
+<string>Gaeste-WLAN</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+<key>SSID_STR</key>
+<string>Heise-Gaeste</string>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>Profil, um sich automatisch mit dem Gaeste-WLAN zu verbinden.</string>
+<key>PayloadDisplayName</key>
+<string>WLAN: Gaeste-WLAN</string>
+<key>PayloadIdentifier</key>
+<string>Text</string>
+<key>PayloadOrganization</key>
+<string>Text</string>
+<key>PayloadType</key>
+<string>Configuration</string>
+<key>PayloadUUID</key>
+<string>Text</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+</dict>
+</plist>
+
