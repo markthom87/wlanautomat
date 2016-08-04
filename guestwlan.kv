@@ -16,7 +16,7 @@ ScreenManagement:
     wlanssid: ''
     wlanpsk: ''
     android_qrcode: android
-    ios_qrcode: ios
+##    ios_qrcode: ios
     windows_qrcode: windows
 
     BoxLayout:
@@ -46,14 +46,14 @@ ScreenManagement:
                     id: android
                     nocache: True
                     source: '/var/guestwlan/android.jpg'
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    text: 'iOS'
-                Image:
-                    id: ios
-                    nocache: True
-                    source: '/var/guestwlan/ios.jpg'
+##            BoxLayout:
+##               orientation: 'vertical'
+##                Label:
+##                    text: 'iOS'
+##                Image:
+##                    id: ios
+##                    nocache: True
+##                    source: '/var/guestwlan/ios.jpg'
             BoxLayout:
                 orientation: 'vertical'
                 Label:
